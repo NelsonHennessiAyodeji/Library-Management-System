@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://use.fontawesome.com/be1ba39dfe.js"></script>
+        <link rel="stylesheet" href="./css/product_style.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <title>Book Zone's Admin Panel</title>
+        <style>body {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        h1 {
+            margin-bottom: 40px;
+        }
+        
+        label {
+            color: #333;
+        }
+        
+        .btn-send {
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            width: 80%;
+            margin-left: 3px;
+            }
+        .help-block.with-errors {
+            color: #ff5050;
+            margin-top: 5px;
+        
+        }
+        
+        .card{
+            margin-left: 10px;
+            margin-right: 10px;
+        }    
+        </style>
+    </head>
+
+
+    <body>
+        <nav class="navbar">
+            <div class="nav-right">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/products.html">Products</a></li>
+                <li><a href="/About.html">About</a></li>
+                <li><a onclick="logout()">Logout</a></li>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class=" text-center mt-5 ">
+    
+                <h1 ><u>Upload A PDF</u></h1>
+                    
+                
+            </div>
+    
+        
+        <div class="row ">
+          <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+           
+                <div class = "container">
+                                 <form id="contact-form" role="form">
+    
+                
+    
+                <div class="controls">
+    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Title *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter the book's title *" required="required" data-error="Book Tittle is required.">
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_lastname">Rental Price *</label>
+                                <input id="form_rentalPrice" type="number" name="rentalPrice" class="form-control" placeholder="Please set the rental price *" required="required" data-error="RentalPrice is required.">
+                                                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="pdf-file">Upload File *</label>
+                                <input id="pdf-file" type="file" name="pdfFile" class="form-control" placeholder="Select a file *" required="required" data-error="Valid pdf file is required.">
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_need">Select Category *</label>
+                                <select id="form_category" name="category" class="form-control" required="required" data-error="Please select a category.">
+                                    <option value="" selected disabled>--Select A Category--</option>
+                                    <option >Adventure</option>
+                                    <option >Romance</option>
+                                    <option >Thriller</option>
+                                    <option >Comedy</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_description">Description *</label>
+                                <textarea id="form_description" name="description" class="form-control" placeholder="Type in a description here." rows="4" required="required" data-error="Please, type in a description."></textarea
+                                    >
+                                </div>
+    
+                            </div>
+    
+    
+                        <div class="col-md-12">
+                            
+                            <input id="upload-pdf-btn" type="submit" class="btn btn-success btn-send  pt-2 btn-block
+                                " value="Upload PDF" >
+                        
+                    </div>
+              
+                    </div>
+    
+    
+            </div>
+             </form>
+            </div>
+                </div>
+    
+    
+        </div>
+            <!-- /.8 -->
+    
+        </div>
+        <!-- /.row-->
+    
+    </div>
+    </div>    
+
+
+
+</body>
+        <div class="container">
+            <div class=" text-center mt-5 ">
+    
+                <h1 ><u>Remove A Book</u></h1>
+                    
+                
+            </div>
+    
+        
+        <div class="row ">
+          <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+           
+                <div class = "container">
+                                 <form id="contact-form" role="form">
+    
+                
+    
+                <div class="controls">
+    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Book ID *</label>
+                                <input id="bookId" type="text" name="bookId" class="form-control" placeholder="Please enter the book ID *" required="required" data-error="Book ID is required.">
+                                
+                            </div>
+                        </div>
+                    </div>    
+    
+                        <div class="col-md-12">
+                            
+                            <input id="deleteBtn" type="submit" class="btn btn-success btn-send  pt-2 btn-block
+                                " value="Delete Book" >
+                        
+                    </div>
+              
+                    </div>
+    
+    
+            </div>
+             </form>
+            </div>
+                </div>
+    
+    
+        </div>
+            <!-- /.8 -->
+    
+        </div>
+        <!-- /.row-->
+    
+    </div>
+    </div>    
+</body>
+
+    
+    <script>
+      const pdfFIle = document.getElementById("pdf-file");
+      const uploadtPdfButton = document.getElementById("upload-pdf-btn");
+      let formName = document.getElementById("form_name");
+      let formCategory = document.getElementById("form_category");
+      let formRentalPrice = document.getElementById("form_rentalPrice");
+      let formDescription = document.getElementById("form_description");
+      let bookId = document.getElementById("bookId");
+      let deleteBtn = document.getElementById("deleteBtn");
+
+      uploadtPdfButton.addEventListener("click", async (e) => {
+          e.preventDefault();
+            const formData = new FormData();
+            formData.append("name", formName.value);
+            formData.append("category", formCategory.value);
+            formData.append("rentalPrice", formRentalPrice.value);
+            formData.append("description", formDescription.value);
+            formData.append("pdfFile", pdfFIle.files[0]);
+
+            const res = await fetch("http://localhost:3000/books/upload", {
+                method: "post",
+                body: formData
+            });
+            
+            const data = await res.json();
+
+            if (res.ok) {
+                alert(`Book: ${formName.value} has been successfully added to ${formCategory.value}`);
+                window.location = 'products.html';
+            } else {
+                alert(data);
+            }
+        });
+
+        deleteBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const res = await fetch(`http://localhost:3000/books/${bookId.value}`, {
+                method: "DELETE"
+            });
+
+            const data = await res.json();
+            if (res.ok) {
+                alert("Successfully deleted the book");
+            } else {
+                alert(data);
+            }
+        });
+</script>
+
+<script src="./js/authorize.js"></script>
+</html>

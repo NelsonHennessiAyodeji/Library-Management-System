@@ -1,0 +1,38 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "An e library management system",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Khomeini NSE",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "express-fileupload": "^1.4.3",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.3",
+    "pdf-parse": "^1.1.1",
+    "pdf.js-extract": "^0.2.1",
+    "pdf2pic": "^3.1.1",
+    "pdfreader": "^3.0.2",
+    "ratelimiter": "^3.4.1",
+    "swagger-ui-express": "^5.0.0",
+    "validator": "^13.11.0",
+    "xss": "^1.0.14",
+    "xss-clean": "^0.1.4"
+  },
+  "license": "ISC"
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/be1ba39dfe.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/product_style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+<title>E-Library Management System</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-right">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/About.html">About</a></li>
+            <!-- <li><a href="/login.html">Login</a></li>
+            <li><a href="/Register.html">Create Account</a></li> -->
+            <li><a onclick="logout()">Logout</a></li>
+            <!-- <li id="adminTab"><a href="/login.html">Admin Panel</a></li> -->
+        </div>
+    </nav>
+
+    <div class="section-1">
+        <div><h1>Welcome, <span id="name">Person</span> to The E-Library Management Site</h1>
+        <p>You can find out yours book here.</p>
+        <a href="/products.html" class="btn">Explore Here  <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+        </div>
+    </div>
+    <div class="section-2">
+        <h2>Featured Products</h2>
+        <!-- <a href="#"><img src="./images/img_2.jpg" alt=""> -->
+        <div class="gallery">
+            <div class="image-holder">
+                <a >
+                    <img id="book1" src="./images/img_2.jpg" alt="img-1">
+                </a>
+            </div>
+            <div class="image-holder">
+                <a>
+                    <img id="book2" src="./images/img_3.jpeg" alt="img-2">
+                </a>
+            </div>
+            <div class="image-holder">
+                <a>
+                    <img id="book3" src="./images/img_4.jpg" alt="img-3">
+                </a>
+            </div>
+            <div class="image-holder">
+                <a>
+                    <img id="book4" src="./images/img_5.jpg" alt="img-4">
+                </a>
+            </div>
+            <div class="image-holder">
+                <a>
+                    <img id="book5" src="./images/img_6.jpg" alt="img-5">
+                </a>
+            </div>
+            <div class="image-holder">
+                <a>
+                    <img id="book6" src="./images/img_7.jpg" alt="img-6">
+                </a>
+            </div>
+            <div class="image-holder">
+                <a>
+                    <img id="book7" src="./images/img_8.jpg" alt="img-7">
+                </a>
+            </div>
+            <div class="image-holder">
+                <a>
+                    <img id="book8" src="./images/img_9.jpg" alt="img-8">
+                </a>
+            </div>
+            <div class="image-holder">
+                <a>
+                    <img id="book9" src="./images/img_10.jpg" alt="img-9">
+                </a>
+            </div>
+            <div class="image-holder">
+                <a>
+                    <img id="book10" src="./images/img_11.jpg" alt="img-10">
+                </a>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- <div class="section-3">
+        <h3>Products</h3>
+        <br>
+        <div class="view-card">
+            <div class="card">
+                <center><img src="./images/img_11.jpg" alt="Avatar"></center>
+                <div class="container">
+                  <center>
+                    <h4><b>John Doe</b></h4> 
+                    <p>Architect & Engineer</p>
+                  </center> 
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/img_11.jpg" alt="Avatar">
+                <div class="container">
+                  <h4><b>John Doe</b></h4> 
+                  <p>Architect & Engineer</p> 
+                </div>
+            </div>
+
+        </div>
+
+    </div>  -->
+
+    <div class="section-4">
+        <h2>Featured Brands</h2>
+        <div class="brand">
+            <img src="./images/book_logo1.png" alt="">
+        </div>
+        <div class="brand">
+            <img src="./images/book_logo_6.png" alt="">
+        </div>
+        <div class="brand">
+            <img src="./images/book_logo3.png" alt="">
+        </div>
+        <div class="brand">
+            <img src="./images/book_logo_4.png" alt="">
+        </div>
+        <div class="brand">
+            <img src="./images/book_logo_5.png" alt="">
+        </div>
+    </div>
+
+    <!-- section-5 contact us  -->
+    <div class="section-5">
+        
+              <h2>Contact Us</h2>
+              <p>leave us a message or suggestion:</p>
+
+              <div class="column">
+                <form action="/index.html">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                  <label for="subject">Subject</label>
+                  <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                  <input type="submit" value="Submit">
+                </form>
+              </div>
+
+    </div>
+</body>
+
+<script>
+    books = {
+        book1: {
+            title: "Roger Paulin",
+            details: `Once upon a time, in a quaint little village nestled between rolling hills and lush forests, there lived a curious young girl named Luna. Luna had always been fascinated by the stars and the mysteries of the universe. Every night, she would sneak out of her bedroom window and lie in the grass, gazing up at the shimmering night sky, dreaming of adventures beyond the horizon.
+
+One evening, as Luna was stargazing, she noticed a shooting star streaking across the sky. Without hesitation, she made a wish with all her heart: to travel to the farthest reaches of the galaxy and explore its wonders. To her amazement, the shooting star seemed to pause for a moment before vanishing into the darkness.
+
+The next morning, Luna awoke to find a peculiar object lying in her backyard. It was a small, shimmering crystal orb, pulsating with an otherworldly glow. Intrigued, Luna reached out to touch it, and in an instant, she was engulfed in a blinding light.
+
+When the light faded, Luna found herself standing on the deck of a magnificent spaceship, surrounded by friendly beings from distant planets. They explained that the shooting star she had wished upon was actually a cosmic messenger, sent to grant her deepest desire.
+
+Over the following days, Luna embarked on the adventure of a lifetime, exploring alien worlds, encountering strange creatures, and marveling at the wonders of the universe. Along the way, she learned valuable lessons about courage, kindness, and the boundless possibilities of the cosmos.
+
+As her journey came to an end and Luna returned home, she realized that the greatest adventure of all was not found among the stars, but within her own heart. And though her feet may have been planted firmly on the ground, her spirit would forever soar among the stars.`
+        },
+        book2: {
+            title: "A Heritage of Shadows",
+            details: `In the heart of a dense forest, there stood an ancient oak tree, its branches stretching high into the sky like gnarled fingers reaching for the heavens. For centuries, this tree had watched over the woodland creatures with wisdom beyond measure.
+
+One crisp autumn morning, a mischievous fox named Jasper stumbled upon the oak tree while chasing a particularly agile squirrel. Out of breath and intrigued by the tree's grandeur, Jasper decided to climb to its highest branch. As he reached the top, he discovered a hidden nest woven from twigs and leaves, cradling a single, shimmering acorn.
+
+Curious, Jasper plucked the acorn from its nest and held it in his paws. Suddenly, a voice echoed through the branches, gentle yet commanding. It was the spirit of the oak tree, speaking to Jasper.
+
+"Dear fox," the voice intoned, "that acorn holds the key to the forest's fate. Plant it in the clearing at the heart of the woods, and you shall witness a miracle beyond imagining."
+
+With a mixture of excitement and trepidation, Jasper darted through the forest until he reached the clearing. With a sense of purpose, he dug a small hole in the earth and carefully placed the acorn inside. As he covered it with soil, a warm glow enveloped him, and the ground beneath his feet began to tremble.
+
+Before his eyes, the acorn sprouted and grew into a magnificent sapling, its leaves shimmering with a magical light. From its branches, tiny buds emerged, each one bursting into a brilliant flower of every color imaginable. The entire forest seemed to come alive, bathed in a kaleidoscope of hues and hues.
+
+Amazed by the beauty of the spectacle, Jasper realized the true power of nature and the importance of protecting it. From that day forward, he became a guardian of the forest, ensuring its tranquility and harmony for generations to come. And as he watched the magical tree flourish, he knew that miracles could indeed be found in the most unexpected of places.
+`
+        },
+        book3: {
+            title: "Heart of the Few",
+            details: `In a bustling city filled with skyscrapers and neon lights, there lived a street musician named Kai. With his weathered guitar and soulful voice, Kai would serenade the busy crowds, hoping to touch hearts and inspire dreams amidst the chaos of urban life.
+
+One rainy evening, as Kai strummed his guitar under a flickering streetlamp, he noticed a small kitten huddled nearby, drenched and shivering in the cold. Moved by compassion, Kai gently scooped up the kitten and tucked it inside his coat, where it nestled against his warmth.
+
+From that moment on, the kitten, whom Kai named Luna, became his faithful companion, sitting by his side as he played his melodies to the passing throngs. Together, they forged a bond that transcended words, a silent understanding between kindred spirits.
+
+As days turned into weeks and months, Kai noticed something extraordinary happening whenever he played his guitar with Luna at his side. The music seemed to take on a life of its own, weaving through the air like a gentle breeze, soothing troubled souls and lifting weary spirits.
+
+Word of Kai and Luna's musical magic spread throughout the city, drawing larger crowds to their impromptu performances. People would gather around, their faces alight with wonder and joy, as Kai's melodies carried them away to distant realms of beauty and possibility.
+
+But amidst the acclaim and admiration, Kai remained humble, knowing that it was Luna's presence that truly made the music come alive. Together, they taught the city that even in the midst of noise and chaos, the power of music and love could create moments of pure magic and connection. And as they continued their musical journey, Kai and Luna became beacons of hope in a world hungry for inspiration.
+`
+        },
+        book4: {
+            title: "Our Darkest Night",
+            details: `In a quaint seaside town nestled along the rocky coast, there resided a young girl named Marina, with eyes as blue as the ocean and a heart as vast as the horizon. Marina had always felt a deep connection to the sea, spending her days collecting seashells and watching the waves dance along the shore.
+
+One stormy afternoon, as Marina wandered along the beach, she stumbled upon a curious sight: a small wooden chest half buried in the sand, its lid slightly ajar. Intrigued, she carefully pried it open to reveal a collection of shimmering gemstones, each one sparkling with an inner light.
+
+But nestled among the gems was a single, flawless pearl, larger and more radiant than any Marina had ever seen. As she held it in her palm, she felt a strange energy coursing through her, as if the pearl held secrets waiting to be unlocked.
+
+That night, Marina dreamed of the ocean, of vast underwater kingdoms and hidden treasures waiting to be discovered. When she awoke, she knew in her heart that the pearl was more than just a beautiful gem—it was a key to unlocking the mysteries of the deep.
+
+With a sense of determination, Marina set out on a daring adventure, diving into the ocean's depths in search of the truth. Guided by the light of the pearl, she encountered fantastical creatures, from playful dolphins to majestic sea turtles, each one offering a clue to unraveling the pearl's secrets.
+
+As she delved deeper into the ocean's depths, Marina discovered a hidden underwater cave, filled with ancient ruins and forgotten relics of a lost civilization. At the heart of the cave, she found a magnificent pearl-adorned altar, pulsating with a mysterious energy.
+
+With trembling hands, Marina placed the pearl upon the altar, unleashing a brilliant burst of light that illuminated the cavern and sent ripples cascading through the ocean depths. In that moment, she understood the true power of the pearl—to unite land and sea, past and present, in a timeless dance of wonder and discovery.
+
+And as Marina emerged from the depths, her heart brimming with newfound wisdom, she knew that her journey had only just begun. For the ocean held endless secrets waiting to be explored, and she was destined to uncover them all, one shimmering pearl at a time.
+`
+        },
+        book5: {
+            title: "Darkest Before the Dawn",
+            details: `In the heart of a sprawling desert, where sand dunes stretched as far as the eye could see, there existed an oasis of lush greenery and vibrant life. At the center of this oasis stood a magnificent palm tree, its fronds swaying gracefully in the gentle breeze, providing shade and shelter to all who sought refuge from the scorching sun.
+
+One hot summer day, as the sun beat down mercilessly upon the desert, a weary traveler named Amir stumbled upon the oasis, his lips cracked and parched from days of wandering through the unforgiving sands. With each faltering step, he drew closer to the palm tree, his heart filled with hope for respite and salvation.
+
+As Amir collapsed beneath the shade of the palm tree, a gentle voice spoke to him, soft as a whisper yet filled with strength and warmth. It was the spirit of the oasis, offering solace and guidance to the weary traveler.
+
+"Rest now, dear wanderer," the voice murmured, "for you have found sanctuary amidst the desert's embrace. Drink from the cool waters of the oasis and let your spirit be renewed."
+
+With gratitude in his heart, Amir drank deeply from the crystal-clear pool at the base of the palm tree, feeling its revitalizing waters wash away his exhaustion and despair. As he closed his eyes and drifted into a peaceful slumber, he dreamed of distant lands and untold adventures, guided by the gentle hand of the oasis spirit.
+
+When Amir awoke, he found himself transformed, his body invigorated and his spirit rekindled with a newfound sense of purpose. With the blessing of the oasis spirit, he set out once more into the desert, no longer a mere traveler, but a guardian of the sands, dedicated to preserving the beauty and bounty of the oasis for generations to come.
+
+And as he journeyed onward, his heart filled with gratitude for the oasis that had saved him, Amir vowed to honor its legacy, ensuring that its waters would continue to flow, a beacon of hope in the vast expanse of the desert.
+`
+        },
+        book6: {
+            title: "All The Lights We Cannot See",
+            details: `In a quiet village nestled among rolling hills and blooming meadows, there lived a skilled craftsman named Elias. With steady hands and a creative mind, Elias crafted intricate wooden toys that brought joy to children far and wide.
+
+One crisp autumn morning, as Elias ventured into the forest to gather wood for his latest creation, he stumbled upon a peculiar sight: a small, abandoned bird's nest nestled among the branches of an old oak tree. Curled within the nest was a tiny egg, its shell adorned with delicate patterns that shimmered in the sunlight.
+
+Filled with compassion, Elias gently cradled the egg in his hands, feeling its warmth against his palm. He knew he couldn't leave it alone in the forest, vulnerable to the elements and predators. With a sense of determination, Elias decided to take the egg back to his workshop, where he could keep it safe until it hatched.
+
+Days passed, and Elias tended to the egg with care, keeping it warm and protected from harm. And then, one magical morning, he awoke to the sound of gentle chirping emanating from the egg. With bated breath, Elias watched as cracks began to form along its surface, revealing the tiny creature inside.
+
+To his astonishment, a beautiful songbird emerged from the egg, its feathers shimmering with a rainbow of colors. With a joyful trill, the bird spread its wings and took flight around the workshop, filling the air with its melodious song.
+
+Grateful for Elias's kindness and protection, the songbird perched upon his shoulder, its eyes shining with gratitude. From that day forth, the two became inseparable companions, embarking on adventures together and spreading happiness wherever they went.
+
+As word of Elias and his enchanted songbird spread throughout the village, people came from far and wide to witness the beauty of their bond. And though Elias continued to craft wooden toys with skill and passion, it was the friendship he shared with the songbird that truly captured the hearts of all who knew them, proving that sometimes, the greatest treasures are found in the most unexpected places.
+`
+        },
+        book7: {
+            title: "Solar Bones",
+            details: `In a bustling metropolis where skyscrapers towered over the streets like giants of glass and steel, there lived a young graffiti artist named Maya. With cans of spray paint in hand and a vision in her mind, Maya would transform blank walls into vibrant murals, each one a testament to the beauty and diversity of the city.
+
+One moonlit night, as Maya roamed the streets in search of inspiration, she stumbled upon an abandoned subway station hidden beneath the bustling city streets. Intrigued by the forgotten space, she ventured inside, her footsteps echoing against the tiled walls.
+
+As Maya explored the dimly lit corridors, she discovered a hidden chamber at the heart of the station, its walls blank and lifeless, begging to be brought to life with color and creativity. With a sense of excitement, Maya reached for her cans of spray paint and began to work, her hands dancing across the walls with purpose and passion.
+
+Hours turned into days as Maya poured her heart and soul into her masterpiece, weaving together images of cityscapes, nature, and humanity in a kaleidoscope of hues and shapes. With each stroke of her brush, she felt a connection to the world around her, as if the very essence of the city flowed through her veins.
+
+When Maya finally stepped back to admire her work, she was greeted by a sight beyond her wildest dreams. The walls of the subway station had come alive with color and movement, transforming the once-forgotten space into a vibrant oasis of art and expression.
+
+Word of Maya's masterpiece spread like wildfire throughout the city, drawing crowds of admirers and fellow artists to the hidden subway station. Inspired by her creativity and passion, they joined forces to create a thriving community of urban artists, turning the forgotten space into a beacon of creativity and unity in the heart of the city.
+
+And as Maya stood amidst the bustling crowd, surrounded by the beauty she had helped to create, she knew that her art had transcended mere paint and canvas—it had become a symbol of hope, resilience, and the power of creativity to transform even the darkest corners of the world.
+`
+        },
+        book8: {
+            title: "The House On The lake",
+            details: `In the heart of a dense forest, where sunlight filtered through the canopy in golden shafts, there lived a solitary wolf named Asher. With fur as dark as midnight and eyes that gleamed like silver moons, Asher roamed the forest in search of solitude and solace.
+
+One crisp winter's night, as Asher prowled through the snow-covered woods, he stumbled upon a small, trembling creature huddled beneath a thicket. It was a young fawn, its coat matted with frost and fear shining in its eyes.
+
+Moved by compassion, Asher approached the fawn with caution, his instincts warring with his desire to help. Sensing the wolf's gentle intentions, the fawn allowed Asher to draw near, its fear melting away in the warmth of his presence.
+
+With a soft nuzzle, Asher urged the fawn to its feet, guiding it through the forest with a watchful eye. Together, they traversed the wilderness, forging an unlikely bond born from compassion and understanding.
+
+As days turned into weeks, Asher and the fawn became inseparable companions, sharing adventures and facing the challenges of the forest together. With Asher's strength and the fawn's agility, they navigated treacherous terrain and outwitted predators, their bond growing stronger with each passing day.
+
+But as spring approached and the forest stirred with new life, Asher knew that the time had come for the fawn to return to the wild, where it belonged. With a heavy heart, he watched as the young deer bounded off into the forest, its spirit forever intertwined with his own.
+
+Though they walked separate paths, Asher carried the memory of the fawn in his heart, a reminder of the beauty of fleeting connections and the power of compassion to bridge the divide between predator and prey. And as he roamed the forest once more, his solitude was tempered by the knowledge that he was never truly alone, for the spirit of the fawn would always walk beside him, guiding him through the
+ wilderness of life
+`
+        },
+        book9: {
+            title: "The Girl In The Letter",
+            details: `In a quaint coastal village where the scent of salt lingered in the air and seagulls danced upon the breeze, there lived a young girl named Lila. Born with a natural affinity for the sea, Lila spent her days exploring tide pools and collecting shells along the shore, her heart forever intertwined with the rhythms of the ocean.
+
+One stormy afternoon, as dark clouds gathered overhead and waves crashed against the rocky cliffs, Lila spotted a mysterious figure washed ashore amidst the tumultuous surf. With a mixture of curiosity and concern, she rushed to the water's edge, where she found a mermaid tangled in seaweed and struggling to breathe.
+
+With quick thinking and nimble fingers, Lila freed the mermaid from her watery prison and carried her to safety upon the sandy shore. As the storm raged on around them, she tended to the mermaid's wounds and offered her shelter beneath the shelter of a nearby cave, where the sound of crashing waves served as a lullaby.
+
+Grateful for Lila's kindness and compassion, the mermaid revealed that she had been swept away by the tempestuous seas and separated from her pod. Alone and adrift, she had feared that all hope was lost until Lila came to her rescue.
+
+Determined to repay Lila's kindness, the mermaid gifted her a shimmering pearl from her treasure trove, imbued with the magic of the ocean depths. With a gentle touch, she placed the pearl in Lila's palm, its iridescent glow illuminating the darkness of the cave.
+
+From that moment on, Lila and the mermaid became steadfast friends, sharing secrets of the sea and weaving tales of adventure beneath the starlit sky. Together, they explored the hidden wonders of the ocean, from sunken shipwrecks to coral reefs teeming with life, their bond growing stronger with each passing day.
+
+As the storm subsided and the sun emerged from behind the clouds, Lila knew that her encounter with the mermaid had changed her life forever. With the shimmering pearl as a symbol of their friendship, she set out to explore the vast expanse of the ocean, guided by the spirit of adventure and the enduring power of compassion.`
+        }
+    }
+
+    const book1 = document.getElementById('book1');
+    const book2 = document.getElementById('book2');
+    const book3 = document.getElementById('book3');
+    const book4 = document.getElementById('book4');
+    const book5 = document.getElementById('book5');
+    const book6 = document.getElementById('book6');
+    const book7 = document.getElementById('book7');
+    const book8 = document.getElementById('book8');
+    const book9 = document.getElementById('book9');
+    const book10 = document.getElementById('book10');
+
+    book1.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book1.title);
+        window.localStorage.setItem("bookText", books.book1.details);
+        window.location = 'book2.html';
+    });
+    book2.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book2.title);
+        window.localStorage.setItem("bookText", books.book2.details);
+        window.location = 'book2.html';
+    });
+    book3.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book3.title);
+        window.localStorage.setItem("bookText", books.book3.details);
+        window.location = 'book2.html';
+    });
+    book4.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book4.title);
+        window.localStorage.setItem("bookText", books.book4.details);
+        window.location = 'book2.html';
+    });
+    book5.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book5.title);
+        window.localStorage.setItem("bookText", books.book5.details);
+        window.location = 'book2.html';
+    });
+    book6.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book6.title);
+        window.localStorage.setItem("bookText", books.book6.details);
+        window.location = 'book2.html';
+    });
+    book7.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book7.title);
+        window.localStorage.setItem("bookText", books.book7.details);
+        window.location = 'book2.html';
+    });
+    book8.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book8.title);
+        window.localStorage.setItem("bookText", books.book8.details);
+        window.location = 'book2.html';
+    });
+    book9.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book9.title);
+        window.localStorage.setItem("bookText", books.book9.details);
+        window.location = 'book2.html';
+    });
+    book10.addEventListener('click', () => {
+        window.localStorage.setItem("bookTitle", books.book10.title);
+        window.localStorage.setItem("bookText", books.book10.details);
+        window.location = 'book2.html';
+    });
+    
+</script>
+<script src="./js/authorize.js"></script>
+</html>

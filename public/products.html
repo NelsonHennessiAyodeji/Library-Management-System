@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://use.fontawesome.com/be1ba39dfe.js"></script>
+        <link rel="stylesheet" href="./css/product_style.css">
+        <link rel="stylesheet" href="./js/style.css">
+        <style>
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 90px;
+                column-gap: 115pxpx;
+                row-gap: 10px;
+                padding: 10px;
+            }
+            
+            /* .grid-item {
+                padding: 20px;
+                text-align: justify;
+                padding-top: 50px;
+                padding-left: 50px;
+            } */
+        </style>
+
+        <title>Book Zone</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-right">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/products.html">Products</a></li>
+                <li><a href="/About.html">About</a></li>
+                <li><a onclick="logout()">Logout</a></li>
+            </div>
+        </nav>
+
+        <div class="section-body">
+            <div class="vertical-nav">
+                <ul>
+                    <h4><left>Category</left></h4>
+                    <li><a href="#Adventure">Adventure</a></li>
+                    <li><a href="#Thriller">Thriller</a></li>
+                    <li><a href="#Romance">Romantic</a></li>
+                    <li><a href="#Comedy">Comedy</a></li>
+                </ul>
+            </div>
+
+            <div class="gallery-main" style="margin-left:25%;padding:1px 16px;height:1000px;">
+                    <div class="Adventure section-2">
+                        <h2>Adventure
+                            <div class="grid-container" id="Adventure"></div>
+                        </h2>
+                        <!-- <div class="gallery" id="showPopup">
+                            <div class="image-holder">
+                                    <img src="./images/Adv1.jfif" alt="img-1">
+                                </a>
+                                <div class="desc">
+                                    Price : ₦200
+                                    <br>
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    <button>Rent</button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <!-- Thriller -->
+
+                    <div class="Thriller">
+                        <h2>Thriller
+                            <div class="grid-container" id="Thriller"></div>
+                        </h2>
+                            <!-- <div class="gallery"> 
+                            <div class="image-holder">
+                                    <img src="./images/th1.jfif" alt="img-1">
+                                </a>
+                                <div class="desc">
+                                    Price : ₦120
+                                    <br>
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    <button>Rent</button>
+                                </div>
+                            </div>    
+                        </div> -->
+                    </div>
+
+                        <!-- Romantic -->
+                        <div class="Romantic">
+                            <h2>Romantic
+                                <div class="grid-container" id="Romance"></div>
+                            </h2>
+                            <!-- <div class="gallery">
+                                <div class="image-holder">
+                                    <a href="#">
+                                        <img src="./images/r1.jfif" alt="img-1">
+                                    </a>
+                                    <div class="desc">
+                                        Price : ₦250
+                                        <br>
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        <button>Rent</button>
+                                    </div>
+                                </div>        
+                            </div> -->
+                        </div>
+
+                            <!-- Comedy -->
+                            <div class="Comedy">
+                                <h2>Comedy
+                                    <div class="grid-container" id="Comedy"></div>
+                                </h2>
+                                <!-- <div class="gallery"> 
+                                    <div class="image-holder">
+                                            <img src="./images/c1.jfif" alt="img-1">
+                                        </a>
+                                        <div class="desc">
+                                            Price : ₦400
+                                            <br>
+                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                            <button>Rent</button>
+                                        </div>
+                                    </div>            
+                                </div> -->
+                            </div>
+                          
+                </div>
+            </div>
+
+            <br>
+
+            
+            
+        </div>
+        <script src="./js/script.js"></script>
+        <script src="./js/authorize.js"></script>
+
+    </body>
+
+
+</html>

@@ -1,0 +1,242 @@
+
+
+Sample PDF Document
+Robert Maron
+Grzegorz Grudzi
+ ́
+nski
+February 20, 1999
+
+2
+
+Contents
+1    Template5
+1.1How to compile a.texfile to a.pdffile.  .  .  .  .  .  .  .  .  .  .  .  .5
+1.1.1Tools.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .5
+1.1.2How to use the tools.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .5
+1.2How to write a document.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .6
+1.2.1The main document.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .6
+1.2.2Chapters.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .6
+1.2.3Spell-checking.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .6
+1.3L
+A
+T
+E
+X and pdfL
+A
+T
+E
+X capabilities.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .7
+1.3.1Overview.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .7
+1.3.2L
+A
+T
+E
+X.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .7
+1.3.3pdfL
+A
+T
+E
+X.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .7
+1.3.4Examples.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .7
+3
+
+4CONTENTS
+
+Chapter 1
+Template
+1.1    How to compile a.texfile to a.pdffile
+1.1.1    Tools
+To process the files you (may) need:
+•pdflatex(for example fromtetexpackage≥0.9-6, which you can
+get fromRed Hat 5.2);
+•acroread(a PDF viewer, available fromhttp://www.adobe.com/);
+•ghostscript≥5.10(for example fromRed Hat Contrib) andghostview
+orgv(from RedHat Linux);
+•efaxpackage could be useful, if you plan to fax documents.
+1.1.2    How to use the tools
+Follow these steps:
+1.put all source.texfiles in one directory, then chdir to the directory (or put
+some of them in the L
+A
+T
+E
+Xsearch path — if you know how to do this);
+2.run “pdflatex file.tex” on the main file of the document three times
+(three — to prepare valid table of contents);
+3.to see or print the result useacroread(unfortunately some versions of
+acroreadmay produce PostScript which is too complex), or
+5
+
+6CHAPTER 1.  TEMPLATE
+4.runghostscript: “gv file.pdf” to display or:
+“gs -dNOPAUSE -sDEVICE=pswrite -q -dBATCH -sOutputFile=file.ps file.pdf”
+to produce a PostScript file;
+5.run “fax send phone-number file.ps” as root to send a fax, or — if you
+know how to do this — modify thefaxscript to be able to fax.pdffiles directly
+(you have to insert “|%PDF*” somewhere. . . ).
+1.2    How to write a document
+1.2.1    The main document
+Choose the name of the document, saydocument.  Copytemplate.texto
+document.tex,  then  edit  it,  change  the  title,  the  authors  and  set  proper  in-
+clude(s) for all the chapters.
+1.2.2    Chapters
+Each chapter should be included in the main document as a separate file. You can
+choose any name for the file, but we suggest adding a suffix to the name of the
+main file. For our example we use the file namedocument_chapter1.tex.
+First,  copytemplate_chapter.textodocument_chapter1.tex
+and add the line
+\include{document_chapter1}
+in thedocument.tex, then editdocument_chapter1.tex, change the
+chapter title and edit the body of the chapter appropriately.
+1.2.3    Spell-checking
+Douse a spell-checker, please!
+You may also want to check grammar, style and so on.  Actually you should
+do it (if you have enough spare time). But youmustcheck spelling!
+You can use theispellpackage for this, from withinemacs, or from the
+command line:
+ispell -t document_chapter1.tex
+
+1.3.  L
+A
+T
+E
+X AND PDFL
+A
+T
+E
+X CAPABILITIES7
+1.3    L
+A
+T
+E
+X and pdfL
+A
+T
+E
+X capabilities
+1.3.1    Overview
+First you edit your source.texfile.  In L
+A
+T
+E
+X you compile it using thelatex
+command to a.dvifile (which stands for device-independent).  The.dvifile
+can be converted to any device-dependent format you like using an appropriate
+driver, for exampledvips.
+When producing.pdffiles you should usepdflatex, which produces di-
+rectly.pdffiles out of.texsources. Note that in the.texfile you may need
+to use some PDF specific packages.
+For viewing.texfiles use your favourite text editor, for viewing.dvifiles
+under X Window System usexdvicommand,.psfiles can be viewed withgv
+(orghostview) and.pdffiles withacroread,gvorxpdf.
+1.3.2    L
+A
+T
+E
+X
+A lot of examples can be found in this document.
+You should also print
+•doc/latex/general/latex2e.dviand
+•doc/latex/general/lshort2e.dvi
+from yourtetexdistribution (usually in
+•/usr/share/texmfor
+•/usr/lib/texmf/texmf).
+1.3.3    pdfL
+A
+T
+E
+X
+Consultdoc/pdftex/manual.pdffrom yourtetexdistribution for more
+details. Very useful informations can be found in thehyperrefandgraphics
+package manuals:
+•doc/latex/hyperref/manual.pdfand
+•doc/latex/graphics/grfguide.dvi.
+1.3.4    Examples
+References
+MIMUW
+
+8CHAPTER 1.  TEMPLATE
+Hyperlinks
+This is a target.
+And this is a link.
+Dashes, etc.
+There are three kinds of horizontal dash:
+•- (use inside words; for example “home-page”, “X-rated”)
+•– (use this one between numbers; for example “pages 2–22”)
+•— (use this one as a sentence separator — like here)
+National characters
+•ó, é, í, . . .
+•è, à, ì, . . .
+•ô, ê, . . .
+•õ, ñ, . . .
+•ö, ë, . . .
+• ̇z
+• ̨a,  ̨e
+•ł, ø, ß
+There are other ways to do this, see the documentation forinputencpack-
+age.
+Reserved characters
+Some characters have some special meaning, thus cannot be entered in the usual
+way.
+•$ & % # _ { }
+•\
+• ̃ ˆ
+
+1.3.  L
+A
+T
+E
+X AND PDFL
+A
+T
+E
+X CAPABILITIES9
+Math
+•1
+2
+,1
+2n
+, . . .
+•i
+1
+,i
+2n
+, . . .
+•
+1
+2
+,
+2n
+2−3
+, . . .
+•α,β,γ,Ω, . . .
+•→,⇒,≥,6=,∈,?, . . .
+•
+√
+2, . . .
+•2 + 2, . . .
+For more examples and symbols see chapter 3 oflshort2e.dvi.
+Fonts
+•Roman
+•Emphasis
+•Medium weight — the default
+•Boldface
+•Upright
+•Slanted
+•Sans serif
+•SMALL CAPS
+•Typewriter
+•and sizes:
+–tiny
+–scriptsize
+–footnotesize
+–small
+–normalsize
+
+10CHAPTER 1.  TEMPLATE
+–large
+–Large
+–LARGE
+–huge
+–Huge

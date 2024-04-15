@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./css/login.css">
+<title> CSS Login Screen Tutorial </title>
+</head>
+<body>
+  <body>
+    <nav class="navbar">
+        <div class="nav-right">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/About.html">About</a></li>
+            <li><a href="/login.html">Login</a></li>
+            <li><a href="/Register.html">Create Account</a></li>
+        </div>
+    </nav>
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>LOGIN</h3>
+            <p>Please enter your credentials to login.</p>
+          </div>
+        </div>
+        <form class="login-form">
+          <input type="email" id="email" placeholder="email"/>
+          <input type="password" id="password" placeholder="password"/>
+          <button id="login-btn">Login</button>
+          <p class="message">Not registered? <a href="Register.html">Create an account</a></p>
+        </form>
+      </div>
+    </div>
+</body>
+</body>
+
+<script defer>
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const loginBtn = document.getElementById('login-btn');
+  const baseURL = 'http://localhost:3000/auth';
+
+  loginBtn.addEventListener('click', login);
+
+  async function login(e) {
+      e.preventDefault();
+      if (emailInput && passwordInput) {
+          const res = await fetch(`${baseURL}/login`, 
+          {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                  email: emailInput.value,
+                  password: passwordInput.value
+              })
+          });
+
+          if (res.ok){
+              window.location.href = 'index.html';
+          } else {
+            alert("Email or password is incorrect");
+            console.log(res.statusText);
+          }
+          
+          console.log(res);
+      }
+  }
+
+</script>
+</html>

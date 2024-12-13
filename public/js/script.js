@@ -1,5 +1,5 @@
 // General Variable(s)
-const baseUrl = 'http://localhost:3000/books';
+const baseUrl = "https://library-management-system-d2rd.onrender.combooks";
 
 // Product Section Elements
 const adventureDiv = document.getElementById("Adventure");
@@ -18,14 +18,14 @@ const bookText = document.getElementById("bookText");
 // Product Page Logic
 async function populate() {
   const res = await fetch(baseUrl, {
-    method: "GET"
+    method: "GET",
   });
-  
+
   const data = await res.json();
   let books = data;
-  
-  books.forEach(book => {
-    if (book.category === 'Adventure'){
+
+  books.forEach((book) => {
+    if (book.category === "Adventure") {
       adventureDiv.innerHTML += `
       <div class="gallery grid-item">
       <div id="image-holder" class="image-holder">
@@ -41,9 +41,8 @@ async function populate() {
       </div>
       </div>
       </div>
-      `      
-    }
-    else if (book.category === 'Romance') {
+      `;
+    } else if (book.category === "Romance") {
       romanceDiv.innerHTML += `
       <div class="gallery grid-item">
       <div id="image-holder" class="image-holder">
@@ -59,9 +58,8 @@ async function populate() {
       </div>
       </div>
       </div>
-      `      
-    }
-    else if (book.category === 'Thriller') {
+      `;
+    } else if (book.category === "Thriller") {
       thrilleDiv.innerHTML += `
       <div class="gallery grid-item">
       <div id="image-holder" class="image-holder">
@@ -77,9 +75,8 @@ async function populate() {
       </div>
       </div>
       </div>
-      `      
-    }
-    else if (book.category === 'Comedy') {
+      `;
+    } else if (book.category === "Comedy") {
       comedyDiv.innerHTML += `
       <div class="gallery grid-item">
       <div id="image-holder" class="image-holder">
@@ -95,48 +92,54 @@ async function populate() {
       </div>
       </div>
       </div>
-      `      
+      `;
     }
   });
 
-const openBookDivs = document.querySelectorAll('.openBook');
-const rentBtns = document.querySelectorAll('.rentBtn');
+  const openBookDivs = document.querySelectorAll(".openBook");
+  const rentBtns = document.querySelectorAll(".rentBtn");
 
-openBookDivs.forEach((bookDiv) => {
-  bookDiv.addEventListener('click', () => {
-    localStorage.setItem("bookID", bookDiv.id);
-    window.location = "book.html";
-  });
-});
-
-rentBtns.forEach((rentBtn) => {
-  rentBtn.addEventListener('click', async () => {
-    localStorage.setItem("bookID", rentBtn.id);
-
-    const res = await fetch(`http://localhost:3000/users/list/${localStorage.getItem("bookID")}`, {
-      method: "POST", 
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({userId: window.localStorage.getItem("userId")})
+  openBookDivs.forEach((bookDiv) => {
+    bookDiv.addEventListener("click", () => {
+      localStorage.setItem("bookID", bookDiv.id);
+      window.location = "book.html";
     });
-
-    const data = await res.json();
-
-    if (res.ok) {
-      alert("Successfully added this book to your list");
-    } else {
-      alert("Something Went wrong");
-    }
   });
-});
-}
 
+  rentBtns.forEach((rentBtn) => {
+    rentBtn.addEventListener("click", async () => {
+      localStorage.setItem("bookID", rentBtn.id);
+
+      const res = await fetch(
+        `https://library-management-system-d2rd.onrender.comusers/list/${localStorage.getItem(
+          "bookID"
+        )}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId: window.localStorage.getItem("userId"),
+          }),
+        }
+      );
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Successfully added this book to your list");
+      } else {
+        alert("Something Went wrong");
+      }
+    });
+  });
+}
 
 // Book Page Logic
 async function findBookDetails() {
   const res = await fetch(`${baseUrl}/${localStorage.getItem("bookID")}`, {
-    method: "GET"
+    method: "GET",
   });
 
   const book = await res.json();
@@ -144,7 +147,7 @@ async function findBookDetails() {
     bookTitle.textContent = book.name;
     bookText.textContent = book.texts;
   } else {
-    window.location = 'products.html';
+    window.location = "products.html";
     alert(book);
   }
 }
@@ -156,7 +159,6 @@ if (adventureDiv) {
 if (bookTitle) {
   findBookDetails();
 }
-
 
 // Code for Popup divs
 

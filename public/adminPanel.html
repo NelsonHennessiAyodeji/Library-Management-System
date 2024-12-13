@@ -226,7 +226,7 @@
             formData.append("description", formDescription.value);
             formData.append("pdfFile", pdfFIle.files[0]);
 
-            const res = await fetch("http://localhost:3000/books/upload", {
+            const res = await fetch("https://library-management-system-d2rd.onrender.combooks/upload", {
                 method: "post",
                 body: formData
             });
@@ -243,7 +243,7 @@
 
         deleteBtn.addEventListener('click', async (e) => {
             e.preventDefault();
-            const res = await fetch(`http://localhost:3000/books/${bookId.value}`, {
+            const res = await fetch(`https://library-management-system-d2rd.onrender.combooks/${bookId.value}`, {
                 method: "DELETE"
             });
 

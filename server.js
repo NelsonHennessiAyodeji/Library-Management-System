@@ -4,18 +4,18 @@ require("express-async-errors");
 //App starters Import
 const express = require("express");
 const app = express();
-const bodyParser = require('body-parser');
-const multer = require('multer');
-const fs = require('fs');
-const path = require('path');
-const PDFExtract = require('pdf.js-extract').PDFExtract;
+const bodyParser = require("body-parser");
+const multer = require("multer");
+const fs = require("fs");
+const path = require("path");
+const PDFExtract = require("pdf.js-extract").PDFExtract;
 const pdfParse = require("pdf-parse");
 // const pdfReader = require('pdfreader');
 
 const fileUpload = require("express-fileupload");
-const filesPayloadExists = require('./middleware/filesPayloadExists');
-const fileExtLimiter = require('./middleware/fileExtLimiter');
-const fileSizeLimiter = require('./middleware/fileSizeLimiter');
+const filesPayloadExists = require("./middleware/filesPayloadExists");
+const fileExtLimiter = require("./middleware/fileExtLimiter");
+const fileSizeLimiter = require("./middleware/fileSizeLimiter");
 
 // extra security packages
 const helmet = require("helmet");
@@ -32,7 +32,7 @@ const cookieParser = require("cookie-parser");
 //Router Imports
 const authRouter = require("./routers/authRouter");
 const userRouter = require("./routers/userRouter");
-const bookRouter = require("./routers/bookRouter");
+const bookRouter = require("./routers/BookRouter");
 const rentalRouter = require("./routers/RentalRouter");
 
 //Middleware Import
@@ -40,11 +40,12 @@ const notFound = require("./middleware/not-found");
 const errorHandler = require("./middleware/error-handler");
 const { error } = require("console");
 
-app.use(cors({
-  origin: 'http://127.0.0.1:5500',
-  methods: ['GET', 'POST']
-}));
-
+app.use(
+  cors({
+    origin: "http://127.0.0.1:5500",
+    methods: ["GET", "POST"],
+  })
+);
 
 //Move the pdf to storage
 // app.post('/upload',
@@ -66,7 +67,6 @@ app.use(cors({
 //         return res.json({ status: 'success', message: Object.keys(files).toString() })
 //     }
 // );
-
 
 // // Set up multer storage
 // const storage = multer.memoryStorage();
@@ -105,7 +105,6 @@ app.use(cors({
 //     }
 // });
 
-
 // // Function to read and extract text from the PDF file
 // function extractTextFromPDF(pdfPath) {
 //   return new Promise((resolve, reject) => {
@@ -125,7 +124,6 @@ app.use(cors({
 //       pdfParser.parseBuffer(dataBuffer);
 //   });
 // }
-
 
 // app.post('/upload', (req, res) => {
 //   const pdfPath = 'C:/Users/Khomeini NSE/Dev Projects/Web Dev/Library Management System/files/{1B14694F-55EF-4C7B-BCFF-ABE391F980FA}.png'; // Replace 'example.pdf' with the path to your PDF file
@@ -149,21 +147,6 @@ app.use(cors({
 // });
 // });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // Define a route to serve the login.html file
 // app.get('/', (req, res) => {
 //   // Adjust the file path to point to the login.html file location
@@ -171,7 +154,7 @@ app.use(cors({
 // });
 
 // Set up static file serving for other static assets if needed
-app.use(express.static(path.join(__dirname, 'public')));// app.use(helmet());
+app.use(express.static(path.join(__dirname, "public"))); // app.use(helmet());
 // app.use(xss());
 app.use(express.json());
 app.use(fileUpload());
@@ -190,7 +173,7 @@ app.use(bodyParser.json());
 //     res.status(400);
 //     res.end();
 //   }
-  
+
 //   pdfParse(req.files.pdfFile).then(result => {
 //     console.log(result.text);
 //     txt = result.text;
@@ -198,16 +181,14 @@ app.use(bodyParser.json());
 //     const textContent = txt;
 //     // File path where the text file will be stored
 //     const filePath = `./upload/${req.files.pdfFile.name}.txt`;
-//     fs.writeFile(filePath, textContent, (err) => { 
-//     if(err) { 
-//     throw err; 
+//     fs.writeFile(filePath, textContent, (err) => {
+//     if(err) {
+//     throw err;
 //     }
-//     console.log("Data has been written to file successfully."); 
-//     }); 
+//     console.log("Data has been written to file successfully.");
+//     });
 //   });
 // });
-
-
 
 //Invoking Routers
 app.use("/auth", authRouter);
@@ -218,16 +199,6 @@ app.use("/rentals", rentalRouter);
 //Error Handler Middleware
 app.use(notFound);
 app.use(errorHandler);
-
-
-
-
-
-
-
-
-
-
 
 //Port Variable
 const port = process.env.PORT || 3000;

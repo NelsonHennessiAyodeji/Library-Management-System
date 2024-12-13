@@ -44,7 +44,7 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "Production"
-        ? "https://library-management-system-d2rd.onrender.com"
+        ? "https://library-management-system-d2rd.onrender.com/"
         : "http://127.0.0.1:5500",
     methods: ["GET", "POST"],
   })

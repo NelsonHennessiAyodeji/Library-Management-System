@@ -1,4 +1,4 @@
-const baseURL = "https://library-management-system-d2rd.onrender.com";
+const baseURL = "https://library-management-system-d2rd.onrender.com/";
 
 const homePageName = document.getElementById("name");
 const logoutTab = document.getElementById("logout");

@@ -1,5 +1,5 @@
 // General Variable(s)
-const baseUrl = "https://library-management-system-d2rd.onrender.combooks";
+const baseUrl = "https://library-management-system-d2rd.onrender.com/books";
 
 // Product Section Elements
 const adventureDiv = document.getElementById("Adventure");
@@ -111,7 +111,7 @@ async function populate() {
       localStorage.setItem("bookID", rentBtn.id);
 
       const res = await fetch(
-        `https://library-management-system-d2rd.onrender.comusers/list/${localStorage.getItem(
+        `https://library-management-system-d2rd.onrender.com/users/list/${localStorage.getItem(
           "bookID"
         )}`,
         {
